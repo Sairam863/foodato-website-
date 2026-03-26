@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foodato – Zomato Clone</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">Foodato</div>
+    <div class="nav-search">
+      <input type="text" id="searchInput" placeholder="Search for food..." />
+    </div>
+    <div class="nav-right">
+      <span class="price">₹<span id="totalPrice">0</span></span>
+      <button class="cart-btn" onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </nav>
+
+  <!-- Location bar -->
+  <div class="location-bar">
+    <label for="locationSelect">Location: </label>
+    <select id="locationSelect">
+      <option value="Hyderabad">Hyderabad</option>
+      <option value="Visakhapatnam">Visakhapatnam</option>
+    </select>
+  </div>
+
+  <!-- Image slider (Biryani + Pizza + Extra) -->
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Biryani" />
+      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47" alt="Pizza" />
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Extra food" />
+    </div>
+  </div>
+
+  <!-- Filters and sort -->
+  <div class="controls">
+    <div class="filter-group">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="biryani">Biryani</button>
+      <button class="filter-btn" data-filter="pizza">Pizza</button>
+      <button class="filter-btn" data-filter="extra">Extra</button>
+    </div>
+    <div class="sort-group">
+      <label>Sort: </label>
+      <select id="sortSelect">
+        <option value="default">Default</option>
+        <option value="price-low">Low to High</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Food items container -->
+  <div class="container">
+    <div id="foodList" class="food-grid">
+      <!-- Will be filled by JS -->
+    </div>
+  </div>
+
+  <!-- Cart modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <h2>Your Cart</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        Total: ₹<span id="cartTotal">0</span>
+      </div>
+      <button class="btn-close" onclick="toggleCart()">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
